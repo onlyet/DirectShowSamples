@@ -2660,8 +2660,9 @@ void ChooseDevices(IMoniker *pmVideo, IMoniker *pmAudio)
         if(gcap.rgpmAudioMenu[i] == NULL)
             break;
 
-        CheckMenuItem(GetMenu(ghwndApp), MENU_ADEVICE0 + i,
-            (S_OK == gcap.rgpmAudioMenu[i]->IsEqual(gcap.pmAudio)) ? MF_CHECKED : MF_UNCHECKED);
+		// FIXME: ÓÐbug£¬ÔÝÊ±ÆÁ±Î
+        //CheckMenuItem(GetMenu(ghwndApp), MENU_ADEVICE0 + i,
+        //    (S_OK == gcap.rgpmAudioMenu[i]->IsEqual(gcap.pmAudio)) ? MF_CHECKED : MF_UNCHECKED);
     }
 
     // Put the video driver name in the status bar - if the filter supports
